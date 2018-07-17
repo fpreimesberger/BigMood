@@ -15,5 +15,8 @@ router.get('/playlist/angsty', function(req, res, next) {
 router.get('/playlist/sad', function(req, res, next) {
   res.render('playlist/sad', { mood: 'Sad' });
 });
+router.get('/playlist/unknown', function(req, res, next) {
+  res.render('playlist/unknown', { mood: 'Unknown' });
+});
 
 module.exports = router;
