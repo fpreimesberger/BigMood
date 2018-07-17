@@ -10,41 +10,7 @@
   <body>
   <!-- Firebase setup -->
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-  <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCZQj0jXlhl7ZKPXuqxwkme611kgZtzIPc",
-    authDomain: "bigmood-ba6fa.firebaseapp.com",
-    databaseURL: "https://bigmood-ba6fa.firebaseio.com",
-    projectId: "bigmood-ba6fa",
-    storageBucket: "",
-    messagingSenderId: "766557031943"
-  };
-  firebase.initializeApp(config);
-  const storageService = firebase.storage();
-  const storageRef = storageService.ref();
-  let selectedFile;
 
-  handleFileUploadChange(e) {
-    selectedFile = e.target.files[0];
-  };
-  handleFileUploadSubmit(e) {
-    const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile); //create a child directory called images, and place the file inside this directory
-    uploadTask.on('state_changed', (snapshot) => {
-    // Observe state change events such as progress, pause, and resume
-    }, (error) => {
-      // Handle unsuccessful uploads
-      console.log(error);
-    }, () => {
-       // Do something once upload is complete
-       console.log('success');
-    });
-
-  document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
-  document.querySelector('.file-submit').addEventListener('click', handleFileUploadSubmit);
-}
-
-</script>
 
     <h1>{{title}}</h1>
     <p>Upload a .png or .jpg of your face</p>
@@ -67,7 +33,48 @@
     <script type="text/javascript" language="javascript" src="../javascripts/script.js"></script>
     <script type="text/javascript" language="javascript" src="../javascripts/emotion.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script> -->
 
     {{{body}}}
   </body>
+
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCZQj0jXlhl7ZKPXuqxwkme611kgZtzIPc",
+    authDomain: "bigmood-ba6fa.firebaseapp.com",
+    databaseURL: "https://bigmood-ba6fa.firebaseio.com",
+    projectId: "bigmood-ba6fa",
+    storageBucket: "gs://bigmood-ba6fa.appspot.com",
+    messagingSenderId: "766557031943"
+  };
+  firebase.initializeApp(config);
+  const storageService = firebase.storage();
+  const storageRef = storageService.ref();
+  let selectedFile;
+
+  console.log("abc");
+
+  function handleFileUploadChange(e) {
+    selectedFile = e.target.files[0];
+  };
+
+  function handleFileUploadSubmit(e) {
+    console.log("upload attempted");
+    const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile); //create a child directory called images, and place the file inside this directory
+    uploadTask.on('state_changed', (snapshot) => {
+    // Observe state change events such as progress, pause, and resume
+    }, (error) => {
+      // Handle unsuccessful uploads
+      console.log(error);
+    }, () => {
+       // Do something once upload is complete
+       console.log('success');
+    });
+}
+    document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
+    document.querySelector('.file-submit').addEventListener('click', handleFileUploadSubmit);
+
+
+  </script>
 </html>
