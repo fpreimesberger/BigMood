@@ -6,6 +6,44 @@
   </head>
   <body>
     {{{body}}}
+  <!-- Firebase setup -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCZQj0jXlhl7ZKPXuqxwkme611kgZtzIPc",
+    authDomain: "bigmood-ba6fa.firebaseapp.com",
+    databaseURL: "https://bigmood-ba6fa.firebaseio.com",
+    projectId: "bigmood-ba6fa",
+    storageBucket: "",
+    messagingSenderId: "766557031943"
+  };
+  firebase.initializeApp(config);
+  const storageService = firebase.storage();
+  const storageRef = storageService.ref();
+  let selectedFile;
+
+  handleFileUploadChange(e) {
+    selectedFile = e.target.files[0];
+  };
+  handleFileUploadSubmit(e) {
+    const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile); //create a child directory called images, and place the file inside this directory
+    uploadTask.on('state_changed', (snapshot) => {
+    // Observe state change events such as progress, pause, and resume
+    }, (error) => {
+      // Handle unsuccessful uploads
+      console.log(error);
+    }, () => {
+       // Do something once upload is complete
+       console.log('success');
+    });
+
+  document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
+  document.querySelector('.file-submit').addEventListener('click', handleFileUploadSubmit);
+}
+
+</script>
+
     <h1>{{title}}</h1>
     <div class="dropdown">
       <button onclick="myFunction()" class="dropbtn">What's your mood?</button>
@@ -14,6 +52,12 @@
         <a href="/playlist/angsty">Angsty</a>
         <a href="/playlist/sad">Sad</a>
       </div>
+
+      <div id="filesubmit">
+        <input type="file" class="file-select" accept="image/*"/>
+        <button class="file-submit">SUBMIT</button>
+      </div>
+
     </div>
     <script type="text/javascript" language="javascript" src="../javascripts/script.js"></script>
   </body>
