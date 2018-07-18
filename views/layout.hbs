@@ -18,15 +18,29 @@
       <input type="file" class="file-select" accept="image/*"/>
       <button class="file-submit">SUBMIT</button>
     </div>
-    <p>or</p>
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">Pick a mood</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="/playlist/happy">Happy</a>
-        <a href="/playlist/angsty">Angsty</a>
-        <a href="/playlist/sad">Sad</a>
-        <a href="/playlist/unknown">Surprise me</a>
-      </div>
+    <!-- <p>or</p> -->
+    <!-- <div class="dropdown"> -->
+      <!-- <button onclick="myFunction()" class="dropbtn">Pick a mood</button> -->
+      <!-- <div id="myDropdown" class="dropdown-content"> -->
+        <!-- <a href="/playlist/happy">Happy</a> -->
+        <!-- <a href="/playlist/angsty">Angsty</a> -->
+        <!-- <a href="/playlist/sad">Sad</a> -->
+        <!-- <a href="/playlist/unknown">Surprise me</a> -->
+      <!-- </div> -->
+
+
+      <h1>Detect Faces:</h1>
+       <button onclick="getEmotion(downloadURL)">Analyze face</button><br><br>
+       <div id="wrapper" style="width:1020px; display:table;">
+           <div id="jsonOutput" style="width:600px; display:table-cell;">
+               Response:<br><br>
+
+               <textarea id="responseTextArea" class="UIInput"
+                         style="width:580px; height:400px;"></textarea>
+           </div>
+       </div>
+        <!-- <script src=“http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js“></script> -->
+
 
 
 
@@ -54,8 +68,6 @@
   const storageRef = storageService.ref();
   let selectedFile;
 
-  console.log("abc");
-
   function handleFileUploadChange(e) {
     selectedFile = e.target.files[0];
   };
@@ -65,17 +77,29 @@
     const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile); //create a child directory called images, and place the file inside this directory
     uploadTask.on('state_changed', (snapshot) => {
     // Observe state change events such as progress, pause, and resume
+
+    // print url
+    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) { console.log('File available at', downloadURL); });
+
+
     }, (error) => {
       // Handle unsuccessful uploads
       console.log(error);
     }, () => {
        // Do something once upload is complete
        console.log('success');
+       // console.log(task.getDownloadUrl());
     });
+    // console.log(snapshot.ref.getDownloadURL());
 }
     document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
     document.querySelector('.file-submit').addEventListener('click', handleFileUploadSubmit);
 
 
+
+    // uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    // console.log('File available at', downloadURL);
+
+// });
   </script>
 </html>
