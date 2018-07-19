@@ -3,13 +3,18 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nemoy" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/pecita" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css"/>
   </head>
   <body>
   <!-- Firebase import -->
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
 
-
+  <div class='everything'>
+    <div class='thecontent'>
     <h1>{{title}}</h1>
+    <h2>tell us how you really feel</h2>
     <!-- Submit photo -->
     <p>Upload a .png or .jpg of your face</p>
     <div id="filesubmit">
@@ -27,7 +32,7 @@
       </div>
 
     <!-- MS API  -->
-      <h1>Detect Faces:</h1>
+      <h1 class='text-align-center'>Detect Faces:</h1>
        <button onclick="getEmotion('https://previews.123rf.com/images/bowie15/bowie151401/bowie15140100071/39843011-angry-face-man.jpg')">Analyze face</button><br><br>
        <div id="wrapper" style="width:1020px; display:table;">
            <div id="jsonOutput" style="width:600px; display:table-cell;">
@@ -37,7 +42,8 @@
                          style="width:580px; height:400px;"></textarea>
            </div>
        </div>
-
+     </div>
+   </div>
 
 
 

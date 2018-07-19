@@ -1,3 +1,48 @@
+body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+.everything {
+  display: grid;
+  background: linear-gradient(to top left, #33ccff 0%, #ff6666 100%);
+  grid-template-columns: 10% auto 10%;
+  grid-template-rows: 100px auto 100px;
+}
+.thecontent {
+  /* display:grid; */
+  grid-column: 2;
+  grid-row: 2;
+  /* align-content: center; */
+  align-content: center;
+  text-align: center;
+  /* align-items: center; */
+}
+h1 {
+  font-family: 'NemoyMedium';
+  font-weight:bold;
+  font-style: normal;
+  font-size: 60px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+h2 {
+  font-family: 'PecitaBook';
+   font-weight: normal;
+   font-style: normal;
+   margin: 0 0 40px;
+   padding-top: 0;
+}
+p {
+   font-family: 'GlacialIndifferenceRegular';
+   font-weight: normal;
+   font-style: normal;
+}
+button {
+  align-items: center;
+}
 /* Dropdown Button */
 .dropbtn {
     background-color: #3498DB;
@@ -6,9 +51,8 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
-}
-h1 {
-
+    font-family: 'GlacialIndifferenceRegular';
+    align-items: center;
 }
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
@@ -37,6 +81,7 @@ h1 {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-family: 'GlacialIndifferenceRegular';
 }
 
 /* Change color of dropdown links on hover */
