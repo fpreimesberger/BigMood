@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
+    <!-- <title>{{title}}</title> -->
     <link rel='stylesheet' href='/stylesheets/style.css'>
     <link rel='stylesheet' href='/stylesheets/background.css'>
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nemoy" type="text/css"/>
@@ -9,55 +9,7 @@
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css"/>
   </head>
   <body>
-  <!-- Firebase import -->
-  <div class="holder">
-  <div class="first"></div>
-  <div class="second"></div>
-  <div class="third"></div>
-  <div class="txt">
-  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-
-  <div class='everything'>
-    <div class='thecontent'>
-    <h1>{{title}}</h1>
-    <h2>tell us how you really feel</h2>
-    <!-- Submit photo -->
-    <p>Upload a .png or .jpg of your face</p>
-    <div id="filesubmit">
-      <input type="file" class="file-select" accept="image/*"/>
-      <button class="file-submit">SUBMIT</button>
-    </div>
-    <p>or</p>
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">Pick a mood</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="/playlist/happy">Happy</a>
-        <a href="/playlist/angsty">Angsty</a>
-        <a href="/playlist/sad">Sad</a>
-        <a href="/playlist/unknown">Surprise me</a>
-      </div>
-
-    <!-- MS API  -->
-      <h1 class='text-align-center'>Detect Faces:</h1>
-       <button onclick="getEmotion('https://previews.123rf.com/images/bowie15/bowie151401/bowie15140100071/39843011-angry-face-man.jpg')">Analyze face</button><br><br>
-       <div id="wrapper" style="width:1020px; display:table;">
-           <div id="jsonOutput" style="width:600px; display:table-cell;">
-               Response:<br><br>
-
-               <textarea id="responseTextArea" class="UIInput"
-                         style="width:200px; height:20px;"></textarea>
-           </div>
-       </div>
-     </div>
-   </div>
-
-
-
-    </div>
-    <script type="text/javascript" language="javascript" src="../javascripts/script.js"></script>
-    <script type="text/javascript" language="javascript" src="../javascripts/emotion.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+  
     {{{body}}}
   </div>
 </div>
@@ -66,55 +18,4 @@
 
 
 
-
-  <!-- DONT TOUCH THIS -->
-  <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCZQj0jXlhl7ZKPXuqxwkme611kgZtzIPc",
-    authDomain: "bigmood-ba6fa.firebaseapp.com",
-    databaseURL: "https://bigmood-ba6fa.firebaseio.com",
-    projectId: "bigmood-ba6fa",
-    storageBucket: "gs://bigmood-ba6fa.appspot.com",
-    messagingSenderId: "766557031943"
-  };
-  firebase.initializeApp(config);
-  const storageService = firebase.storage();
-  const storageRef = storageService.ref();
-  let selectedFile;
-
-
-  // Handle the upload
-  function handleFileUploadChange(e) {
-    selectedFile = e.target.files[0];
-  };
-
-  function handleFileUploadSubmit(e) {
-    console.log("upload attempted");
-    const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile); //create a child directory called images, and place the file inside this directory
-    uploadTask.on('state_changed', (snapshot) => {
-    // Observe state change events such as progress, pause, and resume
-
-    // print url
-    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) { console.log('File available at', downloadURL);});
-    // var image = uploadTask.snapshot.ref.getDownloadURL();
-    // console.log(image);
-    }, (error) => {
-      // Handle unsuccessful uploads
-      console.log(error);
-    }, () => {
-       // Do something once upload is complete
-       console.log('success');
-       // console.log(task.getDownloadUrl());
-    });
-    console.log('aaaa');
-    console.log(`${URLname}`);
-    // console.log(snapshot.ref.getDownloadURL());
-}
-    document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
-    document.querySelector('.file-submit').addEventListener('click', handleFileUploadSubmit);
-
-    // console.log(`does this work??? ${URLname}`);
-    // console.log(URLname);
-  </script>
 </html>
