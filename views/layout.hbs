@@ -3,12 +3,18 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel='stylesheet' href='/stylesheets/background.css'>
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nemoy" type="text/css"/>
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/pecita" type="text/css"/>
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css"/>
   </head>
   <body>
   <!-- Firebase import -->
+  <div class="holder">
+  <div class="first"></div>
+  <div class="second"></div>
+  <div class="third"></div>
+  <div class="txt">
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
 
   <div class='everything'>
@@ -39,7 +45,7 @@
                Response:<br><br>
 
                <textarea id="responseTextArea" class="UIInput"
-                         style="width:580px; height:400px;"></textarea>
+                         style="width:200px; height:20px;"></textarea>
            </div>
        </div>
      </div>
@@ -53,6 +59,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     {{{body}}}
+  </div>
+</div>
+
   </body>
 
 
@@ -107,6 +116,5 @@
 
     // console.log(`does this work??? ${URLname}`);
     // console.log(URLname);
-
   </script>
 </html>
