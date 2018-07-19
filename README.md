@@ -37,7 +37,7 @@ Spotify API - figure out how to use it
 [List of tasks needed to be complete before you can start user testing]
 - task 1: Usable web page (drop down lists for users to choose)
 - task 2: Finish implementing Spotify API
-- task 3:
+- task 3:n
 ​
 ## Wednesday - Usable Build
 [List of tasks to complete the implementation of features]
