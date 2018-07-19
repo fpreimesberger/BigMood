@@ -22,7 +22,12 @@ body {
   text-align: center;
   /* align-items: center; */
 }
-
+h3 {
+  font-family: 'GlacialIndifferenceRegular';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 40px;
+}
 h1 {
   font-family: 'NemoyMedium';
   font-weight: bold;
