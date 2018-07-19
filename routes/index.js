@@ -25,7 +25,8 @@ router.get('/playlist/unknown', function(req, res, next) {
 
 // when user hits submit link, it goes to a process.hbs for sending to MS api
 router.post('/process', function(req, res, next) {
-  link = req.body;
+  link = JSON.stringify(req.body['link']);
+  // link = req.body.toString();
   console.log(link);
   return res.render('./process', {link: link});
 });
