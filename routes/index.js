@@ -23,4 +23,11 @@ router.get('/playlist/unknown', function(req, res, next) {
   res.render('playlist/unknown', { mood: '???' });
 });
 
+// when user hits submit link, it goes to a process.hbs for sending to MS api
+router.post('/process', function(req, res, next) {
+  link = req.body;
+  console.log(link);
+  return res.render('./process', {link: link});
+});
+
 module.exports = router;
