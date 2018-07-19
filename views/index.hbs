@@ -21,11 +21,16 @@
     <div class='thecontent'>
     <h1>{{title}}</h1>
     <h2>tell us how you really feel</h2>
+
+
     <!-- Submit photo -->
     <p>Give us an imgur link of your face</p>
-    <form>Link:<br>
-      <input type='text' id='link' name='link'><br>
+    <form method='POST' action='/process'>Link:<br>
+      <input type='text' class='form-control' id='link' name='link' placeholder="LINK"><br>
+      <input type="submit" value="Submit" />s
     </form>
+
+
     <p>or</p>
     <div class="dropdown">
       <button onclick="myFunction()" class="dropbtn">Pick a mood</button>
@@ -62,58 +67,4 @@
 </div>
 
   </body>
-
-
-
-
-  <!-- DONT TOUCH THIS -->
-  <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCZQj0jXlhl7ZKPXuqxwkme611kgZtzIPc",
-    authDomain: "bigmood-ba6fa.firebaseapp.com",
-    databaseURL: "https://bigmood-ba6fa.firebaseio.com",
-    projectId: "bigmood-ba6fa",
-    storageBucket: "gs://bigmood-ba6fa.appspot.com",
-    messagingSenderId: "766557031943"
-  };
-  firebase.initializeApp(config);
-  const storageService = firebase.storage();
-  const storageRef = storageService.ref();
-  let selectedFile;
-
-
-  // Handle the upload
-  function handleFileUploadChange(e) {
-    selectedFile = e.target.files[0];
-  };
-
-  function handleFileUploadSubmit(e) {
-    console.log("upload attempted");
-    const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile); //create a child directory called images, and place the file inside this directory
-    uploadTask.on('state_changed', (snapshot) => {
-    // Observe state change events such as progress, pause, and resume
-
-    // print url
-    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) { console.log('File available at', downloadURL);});
-    // var image = uploadTask.snapshot.ref.getDownloadURL();
-    // console.log(image);
-    }, (error) => {
-      // Handle unsuccessful uploads
-      console.log(error);
-    }, () => {
-       // Do something once upload is complete
-       console.log('success');
-       // console.log(task.getDownloadUrl());
-    });
-    console.log('aaaa');
-    console.log(`${URLname}`);
-    // console.log(snapshot.ref.getDownloadURL());
-}
-    document.querySelector('.file-select').addEventListener('change', handleFileUploadChange);
-    document.querySelector('.file-submit').addEventListener('click', handleFileUploadSubmit);
-
-    // console.log(`does this work??? ${URLname}`);
-    // console.log(URLname);
-  </script>
 </html>
