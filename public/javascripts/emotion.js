@@ -18,9 +18,10 @@ function getEmotion(url) {
     // Request parameters.
     var params = {
         "returnFaceId": "true",
+        "https":"https://fee.org/media/24410/happy.jpg?anchor=center&mode=crop&height=656&widthratio=2.1341463414634146341463414634&rnd=131497055260000000",
         "returnFaceLandmarks": "false",
         "returnFaceAttributes": "emotion"
-    };
+    };//previews.123rf.com/images/bowie15/bowie151401/bowie15140100071/39843011-angry-face-man.jpg
 
     // JQUERY THANG
     $.ajax({
@@ -39,5 +40,9 @@ function getEmotion(url) {
         let emotions = data[0].faceAttributes.emotion;
         // Top result
         $("#responseTextArea").val(getMax(emotions));
+        // console.log(getMax(emotions));
+        $("#result").val(getMax(emotions));
+        let emotionApiString = getmax(emotions);
+
     });
 };

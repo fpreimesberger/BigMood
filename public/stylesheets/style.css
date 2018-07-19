@@ -54,6 +54,23 @@ p {
 button {
   align-items: center;
 }
+.myButton {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-family: 'GlacialIndifferenceRegular';
+  align-items: center;
+}
+.myButton:hover {
+	background-color:#eb675e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
 
 /* Dropdown Button */
 
