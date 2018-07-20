@@ -32,7 +32,7 @@ h1 {
   font-family: 'NemoyMedium';
   font-weight: bold;
   font-style: normal;
-  font-size: 60px;
+  font-size: 80px;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -63,9 +63,12 @@ button {
   cursor: pointer;
   font-family: 'GlacialIndifferenceRegular';
   align-items: center;
+  width: 160px;
+  height: 50px;
+  margin: 15px 0 0 ;
 }
 .myButton:hover {
-	background-color:#eb675e;
+	background-color: #2980B9;
 }
 .myButton:active {
 	position:relative;
@@ -83,6 +86,8 @@ button {
   cursor: pointer;
   font-family: 'GlacialIndifferenceRegular';
   align-items: center;
+  width: 160px;
+  height: 50px;
 }
 
 /* Dropdown button on hover & focus */
