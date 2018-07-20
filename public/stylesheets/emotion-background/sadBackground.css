@@ -1,0 +1,180 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+.everything {
+  display: grid;
+  /* background: linear-gradient(to top left, #33ccff 0%, #ff6666 100%); */
+  grid-template-columns: 10% auto 10%;
+  grid-template-rows: 100px auto 100px;
+}
+h3 {
+  margin: 20px 0 20px;
+  padding: 0 0 0;
+}
+.thecontent {
+  /* display:grid; */
+  grid-column: 2;
+  grid-row: 2;
+  /* align-content: center; */
+  align-content: center;
+  text-align: center;
+  /* align-items: center; */
+}
+
+.holder, .first, .second, .third {
+  height: 100vh;
+  width: 100vw;
+}
+
+.first, .second, .third {
+  position: absolute;
+}
+
+.second, .third {
+  opacity: 0;
+}
+
+.holder {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.first {
+  animation: first 10s infinite;
+  background: linear-gradient(#003366, #ccccff);
+  z-index: 10;
+}
+
+@keyframes first {
+  0% {
+    opacity: 1.0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 0.2;
+  }
+  70% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
+.second {
+  animation: second 10s infinite;
+  animation-delay: 2s;
+  background: linear-gradient(#66ccff, #003366);
+  z-index: 20;
+}
+
+@keyframes second {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.third {
+  animation: third 10s infinite;
+  animation-delay: 8s;
+  background: linear-gradient(#660066, #99ccff);
+  z-index: 30;
+}
+
+@keyframes third {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.txt {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
