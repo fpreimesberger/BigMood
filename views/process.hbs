@@ -4,28 +4,27 @@
   <title>Your Results</title>
 </head>
 
-<div class="holder">
-<div class="first"></div>
-<div class="second"></div>
-<div class="third"></div>
-<div class="txt">
-  <body id='processDOC'>
-  <div class='everything'>
-  <div class='thecontent'>
-  <!-- <form method='POST' action='/playlist'> -->
- <button class="myButton" onclick="getEmotion({{link}})">Analyze face</button><br><br>
- <div class="align-items-center" id="wrapper">
-     <div class="align-items-center" id="jsonOutput">
-         You seem to be feeling<br><br>
-        <!-- <form method='POST' action='/playlist'> -->
-        <!-- <p id="responseTextArea" class="UIInput"></p> -->
-         <textarea id="responseTextArea" class="UIInput"
-                   style="width:200px; height:20px;"></textarea>
+<  <div class="holder">
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third"></div>
+    <div class="txt">
+      <div class='everything'>
+        <div class='thecontent'>
+          <h1>BIG_MOOD</h1>
+          <h2>Results</h2>
 
+          <!-- <form method='POST' action='/playlist'> -->
+          <button class="myButton" onclick="getEmotion({{link}})">Analyze face</button><br><br>
+          <div class="align-items-center" id="wrapper">
+            <div class="align-items-center" id="jsonOutput">
+              You seem to be feeling<br><br>
+              <!-- <form method='POST' action='/playlist'> -->
+              <!-- <p id="responseTextArea" class="UIInput"></p> -->
+              <textarea id="responseTextArea" class="UIInput" style="width:200px; height:20px;"></textarea>
 
-        <p id="result" class="UIInput"></p>
-        <p>Click to get your playlist</p>
-
+              <p id="result" class="UIInput"></p>
+              <p>Click to get your playlist</p>
 
         <!-- <form method='POST' action='/playlist'> -->
           <!-- <button id='getPlayList' class='myButton'>abc</button> -->
