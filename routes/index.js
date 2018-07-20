@@ -1,25 +1,9 @@
 var express = require('express');
 var router = express.Router();
- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
- // var emotionApiString = {
- //   x:""
- // };
-
-// playlist arrays here
-// const neutral_music = [<iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX1s9knjP51Oa?si=FQwyO_LjRI6iYDaks3f0Bw" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
-// <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DXbIGqYf7WDxP?si=ahoexHG0QHu-9Q3BSOeOdA"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
-// <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX6VdMW310YC7?si=mwbD53sCQQ-R_4TzzJWTwQ"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>];
-//
-// const angry_music = [<iframe src="https://open.spotify.com/embed/user/spotify/playlist/5s7Sp5OZsw981I2OkQmyrz?si=fwtlA-uTQuSMgOwjW_K77w"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
-// <iframe src=""  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
-// <iframe src=""  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>];
-//
-// const surprise_music = [<iframe src="https://open.spotify.com/embed/user/jodeecerdaa/playlist/5UwjklSXrLmiWWNvC6Rw3Q?si=-HOy14eXSiizkXfcxu3KdA"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
-// <iframe src="https://open.spotify.com/embed/user/kenneth366s/playlist/3GNM6A3gHogLR5197y6aeq?si=_oIC2fTyTFa6wU2sVbnZwg"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
-// <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DZ06evO2vjEpW?si=vq0RrRuMR3-opVkaOSKGbw"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>];
-//
-
+const angsty_music = ["https://open.spotify.com/embed/user/spotify/playlist/5s7Sp5OZsw981I2OkQmyrz?si=fwtlA-uTQuSMgOwjW_K77w", "https://open.spotify.com/embed/user/1264038079/playlist/2vivknVOeJD7BUYnnuztrE","https://open.spotify.com/embed/user/natfrickfrack/playlist/3MqDZ6qDEtGp3JIf34cLQW" ];
+const happy_music = ["https://open.spotify.com/embed/user/sonymusicuk/playlist/5njm69gKd9t3RzpBFafjOL", "https://open.spotify.com/embed/user/casafebusplm/playlist/7dlDBSON8kWYTu24fIspyK", "https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DWTigpPD9perY", "https://open.spotify.com/embed/user/ivarz123/playlist/0kWycnqEfYA31P87pJBtA8"];
+const sad_music = ["https://open.spotify.com/embed/user/pauloakaseiji/playlist/6gT2fQF1EVvCFwKTRPCQaA", "https://open.spotify.com/embed/user/chalkyboness/playlist/4slmOJp5zJRjT03bXG4VRV", "https://open.spotify.com/embed/user/johannamoes1/playlist/5ar0YiuBQm4lkOJ4wPRaJg"];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -28,14 +12,16 @@ router.get('/', function(req, res, next) {
 
 // playlists and moods
 router.get('/playlist/happy', function(req, res, next) {
-  // var playlist = surprise_music[Math.floor(Math.random()*surprise_music.length)];.
-  res.render('playlist/happy', { mood: 'happy' });
+  var playlist = happy_music[Math.floor(Math.random()*happy_music.length)];
+  res.render('playlist/happy', { mood: 'happy', playlist: playlist });
 });
 router.get('/playlist/angsty', function(req, res, next) {
-  res.render('playlist/angsty', { mood: 'angsty'});
+  var playlist = angsty_music[Math.floor(Math.random()*angsty_music.length)];
+  res.render('playlist/angsty', { mood: 'angsty', playlist: playlist});
 });
 router.get('/playlist/sad', function(req, res, next) {
-  res.render('playlist/sad', { mood: 'sad' });
+  var playlist = sad_music[Math.floor(Math.random()*sad_music.length)];
+  res.render('playlist/sad', { mood: 'sad', playlist: playlist });
 });
 router.get('/playlist/unknown', function(req, res, next) {
   res.render('playlist/unknown', { mood: '???' });
@@ -54,7 +40,7 @@ router.post('/playlist', function(req, res, next) {
   console.log('hey');
   console.log(emotion);
 
-  
+
   // var emotion;
   // if formText==='anger' || formText==='contempt' || formText==='disgust' || formText==='fear' {
     // emotion = 'angsty';
