@@ -4,7 +4,18 @@ var router = express.Router();
 
 
 // playlist arrays here
-let angsty = '<iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX3YSRoSdA634" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+// const neutral_music = [<iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX1s9knjP51Oa?si=FQwyO_LjRI6iYDaks3f0Bw" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
+// <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DXbIGqYf7WDxP?si=ahoexHG0QHu-9Q3BSOeOdA"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
+// <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX6VdMW310YC7?si=mwbD53sCQQ-R_4TzzJWTwQ"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>];
+//
+// const angry_music = [<iframe src="https://open.spotify.com/embed/user/spotify/playlist/5s7Sp5OZsw981I2OkQmyrz?si=fwtlA-uTQuSMgOwjW_K77w"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
+// <iframe src=""  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
+// <iframe src=""  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>];
+//
+// const surprise_music = [<iframe src="https://open.spotify.com/embed/user/jodeecerdaa/playlist/5UwjklSXrLmiWWNvC6Rw3Q?si=-HOy14eXSiizkXfcxu3KdA"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
+// <iframe src="https://open.spotify.com/embed/user/kenneth366s/playlist/3GNM6A3gHogLR5197y6aeq?si=_oIC2fTyTFa6wU2sVbnZwg"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
+// <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DZ06evO2vjEpW?si=vq0RrRuMR3-opVkaOSKGbw"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>];
+//
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -13,6 +24,7 @@ router.get('/', function(req, res, next) {
 
 // playlists and moods
 router.get('/playlist/happy', function(req, res, next) {
+  // var playlist = surprise_music[Math.floor(Math.random()*surprise_music.length)];.
   res.render('playlist/happy', { mood: 'happy' });
 });
 router.get('/playlist/angsty', function(req, res, next) {
