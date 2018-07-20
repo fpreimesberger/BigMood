@@ -32,11 +32,9 @@ h3 {
 
 h1 {
   font-family: 'NemoyMedium';
-  font-weight: bold;
-  font-style: normal;
   font-size: 80px;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  font-weight: bold;
+  margin: 0;
 }
 
 h2 {
@@ -51,6 +49,15 @@ p {
   font-family: 'GlacialIndifferenceRegular';
   font-weight: normal;
   font-style: normal;
+  font-size: 18px;
+}
+
+#link {
+  height: 50px;
+  width: 500px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 button {
