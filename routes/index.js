@@ -28,7 +28,7 @@ router.get('/playlist/happy', function(req, res, next) {
   res.render('playlist/happy', { mood: 'happy' });
 });
 router.get('/playlist/angsty', function(req, res, next) {
-  res.render('playlist/angsty', { mood: 'angsty', playlist: angsty });
+  res.render('playlist/angsty', { mood: 'angsty'});
 });
 router.get('/playlist/sad', function(req, res, next) {
   res.render('playlist/sad', { mood: 'sad' });
