@@ -1,5 +1,7 @@
-//Get Max
-  // <script src=“http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js“></script>
+
+var emotionApiString = {
+  x:""
+};
 
 function getMax(json) {
   var max = Object.keys(json)[0];
@@ -34,15 +36,46 @@ function getEmotion(url) {
         data: '{"url": ' + '"' + url + '"}',
     })
 
+    // var emotionApiString;
+
     .done(function(data) {
         // Show formatted JSON on webpage.
         // Results showing % of each emotion
         let emotions = data[0].faceAttributes.emotion;
+        // console.log('TESTTTTT');
+        // console.log(JSON.stringify(emotions));
+
         // Top result
         $("#responseTextArea").val(getMax(emotions));
-        // console.log(getMax(emotions));
-        $("#result").val(getMax(emotions));
-        let emotionApiString = getmax(emotions);
+        var emotion = getMax(emotions);
+        console.log(emotion);
+        var output;
+
+        // SORT OUT EMOTIONS AND REDIRECT
+        if ( emotion ==='happiness') {
+          output = 'happy';
+        } else if (emotion ==='surprise') {
+          output = 'happy';
+        } else if (emotion === 'sadness') {
+          output = 'sad';
+        } else if (emotion === 'neutral') {
+          output = 'unknown';
+        } else {
+          output='angsty';
+        }
+
+        window.location.replace('/playlist/'+output);
+        // console.log(JSON.stringify(emotionApiString.x));
+
+        //
+        // router.post('/playlist', function(req, res, next) {
+        //   console.log('HEYYYYY');
+        //   console.log(JSON.stringify(emotion));
+        // // CHANGE LATER
+        //   return res.render('./playlist/unknown', {mood: '???'});
+        // })
+
+
 
     });
 };

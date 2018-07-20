@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
  // <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+ // var emotionApiString = {
+ //   x:""
+ // };
 
 // playlist arrays here
 // const neutral_music = [<iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX1s9knjP51Oa?si=FQwyO_LjRI6iYDaks3f0Bw" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
@@ -16,6 +19,7 @@ var router = express.Router();
 // <iframe src="https://open.spotify.com/embed/user/kenneth366s/playlist/3GNM6A3gHogLR5197y6aeq?si=_oIC2fTyTFa6wU2sVbnZwg"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>,
 // <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DZ06evO2vjEpW?si=vq0RrRuMR3-opVkaOSKGbw"  width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>];
 //
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -46,9 +50,11 @@ router.post('/process', function(req, res, next) {
 });
 
 router.post('/playlist', function(req, res, next) {
-  // var formText = $("#responseTextArea").val();
-  var formText = document.getElementById("responseTextArea").value;
-  console.log(formText);
+  emotion = emotionApiString.x;
+  console.log('hey');
+  console.log(emotion);
+
+  
   // var emotion;
   // if formText==='anger' || formText==='contempt' || formText==='disgust' || formText==='fear' {
     // emotion = 'angsty';
@@ -60,7 +66,8 @@ router.post('/playlist', function(req, res, next) {
   //   emotion='unknown';
   // }
 
-  return res.render('./playlist/'+emotion);
+// CHANGE LATER
+  return res.render('./playlist/unknown', {mood: '???'});
 })
 
 
