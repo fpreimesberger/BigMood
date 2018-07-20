@@ -34,15 +34,18 @@ function getEmotion(url) {
         data: '{"url": ' + '"' + url + '"}',
     })
 
+    var emotionApiString;
+
     .done(function(data) {
         // Show formatted JSON on webpage.
         // Results showing % of each emotion
         let emotions = data[0].faceAttributes.emotion;
+        console.log('TESTTTTT');
+        console.log(JSON.stringify(emotions));
+
         // Top result
         $("#responseTextArea").val(getMax(emotions));
-        // console.log(getMax(emotions));
-        $("#result").val(getMax(emotions));
-        let emotionApiString = getmax(emotions);
-
+        emotionApiString = getMax(emotions);
+        console.log(JSON.stringify(emotionApiString));
     });
 };
