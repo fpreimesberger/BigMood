@@ -32,7 +32,7 @@ h3 {
 
 h1 {
   font-family: 'NemoyMedium';
-  font-size: 80px;
+  font-size: 65px;
   font-weight: bold;
   margin: 0;
 }
@@ -76,6 +76,7 @@ button {
   width: 160px;
   height: 50px;
   margin: 15px 0 0;
+  font-weight: bold;
 }
 
 .myButton:hover {
@@ -100,6 +101,7 @@ button {
   align-items: center;
   width: 160px;
   height: 50px;
+  font-weight: bold;
 }
 
 /* Dropdown button on hover & focus */
