@@ -22,12 +22,14 @@ body {
   text-align: center;
   /* align-items: center; */
 }
+
 h3 {
   font-family: 'GlacialIndifferenceRegular';
   font-weight: normal;
   font-style: normal;
   font-size: 40px;
 }
+
 h1 {
   font-family: 'NemoyMedium';
   font-weight: bold;
@@ -54,6 +56,7 @@ p {
 button {
   align-items: center;
 }
+
 .myButton {
   background-color: #3498DB;
   color: white;
@@ -65,14 +68,16 @@ button {
   align-items: center;
   width: 160px;
   height: 50px;
-  margin: 15px 0 0 ;
+  margin: 15px 0 0;
 }
+
 .myButton:hover {
-	background-color: #2980B9;
+  background-color: #2980B9;
 }
+
 .myButton:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 
 /* Dropdown Button */
