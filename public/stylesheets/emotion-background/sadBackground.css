@@ -1,9 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Bitter);
-
-.holder {
-  height: 100%;
-}
-
 body {
   width: 100%;
   height: 100%;
@@ -29,7 +24,6 @@ h3 {
   align-content: center;
   text-align: center;
   /* align-items: center; */
-
 }
 
 .holder, .first, .second, .third {
@@ -53,7 +47,7 @@ h3 {
 
 .first {
   animation: first 10s infinite;
-  background: linear-gradient(#800000, #999966);
+  background: linear-gradient(#003366, #ccccff);
   z-index: 10;
 }
 
@@ -96,7 +90,7 @@ h3 {
 .second {
   animation: second 10s infinite;
   animation-delay: 2s;
-  background: linear-gradient(#ffffcc, #990000);
+  background: linear-gradient(#66ccff, #003366);
   z-index: 20;
 }
 
@@ -139,7 +133,7 @@ h3 {
 .third {
   animation: third 10s infinite;
   animation-delay: 8s;
-  background: linear-gradient(#ccccff, #800000);
+  background: linear-gradient(#660066, #99ccff);
   z-index: 30;
 }
 
