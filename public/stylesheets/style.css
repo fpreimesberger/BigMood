@@ -24,6 +24,7 @@ body {
 }
 
 h3 {
+  margin-top: 80px;
   font-family: 'GlacialIndifferenceRegular';
   font-weight: normal;
   font-style: normal;
@@ -148,4 +149,9 @@ button {
 
 .show {
   display: block;
+}
+
+iframe {
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
