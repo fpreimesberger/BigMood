@@ -1,0 +1,42 @@
+<head>
+  <link rel='stylesheet' href='/stylesheets/background.css'>
+  <link rel='stylesheet' href='/stylesheets/style.css'>
+  <title>Your Results</title>
+</head>
+
+ <div class="holder">
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third"></div>
+    <div class="txt">
+      <div class='everything'>
+        <div class='thecontent'>
+          <h1>BIG_MOOD</h1>
+          <h2>Results</h2>
+
+          <!-- <form method='POST' action='/playlist'> -->
+          <button class="myButton" onclick="getEmotion({{link}})">Analyze face</button><br><br>
+          <div class="align-items-center" id="wrapper">
+            <div class="align-items-center" id="jsonOutput">
+              You seem to be feeling<br><br>
+              <!-- <form method='POST' action='/playlist'> -->
+              <!-- <p id="responseTextArea" class="UIInput"></p> -->
+              <textarea id="responseTextArea" class="UIInput" style="width:200px; height:20px;"></textarea>
+
+              <p id="result" class="UIInput"></p>
+     </div>
+   </div>
+  </div>
+ </div>
+</div>
+ <script>
+ // let test= document.getElementById('responseTextArea').value;
+ // console.log(test);
+
+
+ </script>
+ <script type="text/javascript" language="javascript" src="../javascripts/script.js"></script>
+ <script type="text/javascript" language="javascript" src="../javascripts/emotion.js"></script>
+ <!-- <script type="text/javascript" language="javascript" src="../routes/index.js"></script> -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>

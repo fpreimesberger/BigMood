@@ -1,8 +1,8 @@
 # Big MOOD
-Web app that generates spotify playlist based on questions that determine what mood you are in. 
+Web app that generates Spotify playlist based on questions that determine what mood you are in.
 ​
 ## Audience
-The primary audience would be Spotify users looking for new music based on their mood 
+The primary audience would be Spotify users looking for new music based on their mood
 ​
 ## Experience
 A user opens the web app when they want some new tunes, and they select their mood from a dropdown. A random Spotify playlist that matches their mood loads on the page.
@@ -37,7 +37,7 @@ Spotify API - figure out how to use it
 [List of tasks needed to be complete before you can start user testing]
 - task 1: Usable web page (drop down lists for users to choose)
 - task 2: Finish implementing Spotify API
-- task 3:
+- task 3:n
 ​
 ## Wednesday - Usable Build
 [List of tasks to complete the implementation of features]
@@ -49,7 +49,7 @@ Spotify API - figure out how to use it
 ## Thursday - Feature Complete
 [List of tasks needed to polish and launch on a live server]
 - task 1: Work out user testing bugs/ flow bugs
-- task 2: Finish Mood Api 
+- task 2: Finish Mood Api
 - task 3:
 - [...]
 ## Friday - Polish!
