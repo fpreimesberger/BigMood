@@ -7,6 +7,7 @@
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/nemoy" type="text/css"/>
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/pecita" type="text/css"/>
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
 
@@ -24,7 +25,7 @@
 
     <!-- Submit photo -->
       <p>Enter an imgur link of your face (.jpg only) and get a playlist that matches your mood</p>
-      <form method='POST' action='/process'>Link:<br>
+      <form action='#' id='urlEntry'>Link:<br>
         <input type='text' name='link' class='form-control' id='link' placeholder="https://_____________.jpg" style = "text-align:center"><br>
         <!-- <input type="submit" value="Submit"> -->
         <button type="submit" class="myButton">Submit</button>
