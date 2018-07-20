@@ -1,7 +1,13 @@
+//
+// var emotionApiString = {
+//   x:""
+// };
 
-var emotionApiString = {
-  x:""
-};
+$('#urlEntry').submit(function(event) {
+  event.preventDefault()
+  let link = $('#link').val()
+  let emotion = getEmotion(link)
+})
 
 function getMax(json) {
   var max = Object.keys(json)[0];
