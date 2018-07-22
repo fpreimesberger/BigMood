@@ -9,7 +9,7 @@ body {
 .everything {
   display: grid;
   grid-template-columns: 10% auto 10%;
-  grid-template-rows: 100px 650px 100px ;
+  grid-template-rows: 100px 800px 100px ;
 }
 
 .thecontent {
