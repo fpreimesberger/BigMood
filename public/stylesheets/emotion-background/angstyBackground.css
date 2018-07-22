@@ -14,7 +14,7 @@ body {
 .everything {
   display: grid;
   grid-template-columns: 10% auto 10%;
-  grid-template-rows: 100px auto 100px;
+  grid-template-rows: 100px 650px 100px;
 }
 h3 {
   margin: 20px 0 20px;
@@ -28,7 +28,7 @@ h3 {
 }
 
 .holder, .first, .second, .third {
-  height: 100vh;
+  height: 850px;
   width: 100vw;
 }
 

@@ -4,10 +4,12 @@ body {
   margin: 0;
   font-family: 'Bitter', serif;
   text-align: center;
+  height: 100%;
 }
 
 .holder, .first, .second, .third {
-  height: 100vh;
+  /* height: 100vh; */
+  height: 900px;
   width: 100vw;
 }
 
