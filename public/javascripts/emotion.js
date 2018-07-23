@@ -1,14 +1,11 @@
-//
-// var emotionApiString = {
-//   x:""
-// };
-
+// render playlist page
 $('#urlEntry').submit(function(event) {
   event.preventDefault()
   let link = $('#link').val()
   let emotion = getEmotion(link)
 })
 
+// get most apparent emotion from api's json output
 function getMax(json) {
   var max = Object.keys(json)[0];
   for (key in json) {
@@ -18,18 +15,19 @@ function getMax(json) {
   return max;
 }
 
+// use api
 function getEmotion(url) {
+    // api auth
     var subscriptionKey = "28b26b3306c2451890069b6a083e3c0f";
-
     var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
 
-    // Request parameters.
+    // request parameters
     var params = {
         "returnFaceId": "true",
         "https":"https://fee.org/media/24410/happy.jpg?anchor=center&mode=crop&height=656&widthratio=2.1341463414634146341463414634&rnd=131497055260000000",
         "returnFaceLandmarks": "false",
         "returnFaceAttributes": "emotion"
-    };//previews.123rf.com/images/bowie15/bowie151401/bowie15140100071/39843011-angry-face-man.jpg
+    };
 
     // JQUERY THANG
     $.ajax({
@@ -42,22 +40,15 @@ function getEmotion(url) {
         data: '{"url": ' + '"' + url + '"}',
     })
 
-    // var emotionApiString;
-
     .done(function(data) {
-        // Show formatted JSON on webpage.
-        // Results showing % of each emotion
+        // results showing % of each emotion in json file
         let emotions = data[0].faceAttributes.emotion;
-        // console.log('TESTTTTT');
-        // console.log(JSON.stringify(emotions));
-
-        // Top result
+        // top result
         $("#responseTextArea").val(getMax(emotions));
         var emotion = getMax(emotions);
-        console.log(emotion);
         var output;
 
-        // SORT OUT EMOTIONS AND REDIRECT
+        // sort out emotions and redirect
         if ( emotion ==='happiness') {
           output = 'happy';
         } else if (emotion ==='surprise') {
@@ -70,18 +61,7 @@ function getEmotion(url) {
           output='angsty';
         }
 
+        // reroute
         window.location.replace('/playlist/'+output);
-        // console.log(JSON.stringify(emotionApiString.x));
-
-        //
-        // router.post('/playlist', function(req, res, next) {
-        //   console.log('HEYYYYY');
-        //   console.log(JSON.stringify(emotion));
-        // // CHANGE LATER
-        //   return res.render('./playlist/unknown', {mood: '???'});
-        // })
-
-
-
     });
 };

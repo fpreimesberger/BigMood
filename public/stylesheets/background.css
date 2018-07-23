@@ -1,12 +1,16 @@
+/* home page styling */
+
 @import url(https://fonts.googleapis.com/css?family=Bitter);
 body {
   margin: 0;
   font-family: 'Bitter', serif;
   text-align: center;
+  height: 100%;
 }
 
 .holder, .first, .second, .third {
-  height: 100vh;
+  /* height: 100vh; */
+  height: 1100px;
   width: 100vw;
 }
 

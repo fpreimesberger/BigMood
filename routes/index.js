@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Big_Mood' });
 });
 
-// playlists and moods
+// playlists and moods; get random playlist from category
 router.get('/playlist/happy', function(req, res, next) {
   var playlist = happy_music[Math.floor(Math.random()*happy_music.length)];
   res.render('playlist/happy', { mood: 'happy', playlist: playlist });
@@ -30,31 +30,8 @@ router.get('/playlist/unknown', function(req, res, next) {
 // when user hits submit link, it goes to a process.hbs for sending to MS api
 router.post('/process', function(req, res, next) {
   link = JSON.stringify(req.body['link']);
-  // link = req.body.toString();
   console.log(link);
   return res.render('./process', {link: link});
 });
-
-router.post('/playlist', function(req, res, next) {
-  emotion = emotionApiString.x;
-  console.log('hey');
-  console.log(emotion);
-
-
-  // var emotion;
-  // if formText==='anger' || formText==='contempt' || formText==='disgust' || formText==='fear' {
-    // emotion = 'angsty';
-  // } if formText==='happiness' || formText==='surprise' {
-  //   emotion = 'happy';
-  // } if formText==='sadness' {
-  //   emotion = 'sad';
-  // }else {
-  //   emotion='unknown';
-  // }
-
-// CHANGE LATER
-  return res.render('./playlist/unknown', {mood: '???'});
-})
-
 
 module.exports = router;

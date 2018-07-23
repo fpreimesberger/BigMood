@@ -13,27 +13,22 @@ body {
 }
 .everything {
   display: grid;
-  /* background: linear-gradient(to top left, #33ccff 0%, #ff6666 100%); */
   grid-template-columns: 10% auto 10%;
-  grid-template-rows: 100px auto 100px;
+  grid-template-rows: 100px 800px 100px;
 }
 h3 {
   margin: 20px 0 20px;
   padding: 0 0 0;
 }
 .thecontent {
-  /* display:grid; */
   grid-column: 2;
   grid-row: 2;
-  /* align-content: center; */
   align-content: center;
   text-align: center;
-  /* align-items: center; */
-
 }
 
 .holder, .first, .second, .third {
-  height: 100vh;
+  height: 1000px;
   width: 100vw;
 }
 
