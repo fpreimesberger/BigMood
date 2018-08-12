@@ -18,7 +18,9 @@ function getMax(json) {
 // use api
 function getEmotion(url) {
     // api auth
-    var subscriptionKey = "28b26b3306c2451890069b6a083e3c0f";
+    var subscriptionKey = process.env.APIkey;
+    console.log(`get emotion ????? api key print`);
+    console.log(process.env.APIkey);
     var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
 
     // request parameters
