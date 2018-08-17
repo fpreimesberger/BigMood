@@ -6,12 +6,15 @@ body {
   font-family: 'Bitter', serif;
   text-align: center;
   height: 100%;
+  width: 100%;
 }
 
 .holder, .first, .second, .third {
   /* height: 100vh; */
-  height: 1100px;
-  width: 100vw;
+  height: 850px;
+  /* width: 100vw; */
+  width: 100%;
+  /* overflow-y:hidden; */
 }
 
 .first, .second, .third {
@@ -31,6 +34,8 @@ body {
 .first {
   animation: first 10s infinite;
   background: linear-gradient(#5ff8ca, #60e08c);
+  min-height: 100%;
+  /* min-width: 100%; */
   z-index: 10;
 }
 
@@ -74,6 +79,8 @@ body {
   animation: second 10s infinite;
   animation-delay: 2s;
   background: linear-gradient(#19eaa6, #00a1f0);
+  min-height: 100%;
+  /* min-width: 100%; */
   z-index: 20;
 }
 
@@ -117,6 +124,8 @@ body {
   animation: third 10s infinite;
   animation-delay: 8s;
   background: linear-gradient(#aab7f8, #ff75c6);
+  min-height: 100%;
+  /* min-width: 100%; */
   z-index: 30;
 }
 
